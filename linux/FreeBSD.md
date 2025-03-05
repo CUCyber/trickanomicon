@@ -81,7 +81,7 @@ my_example_service code
 - Note that rc.conf should not be made immutable, as sysrc commands won't be able to update variable names
 - Limit rc.conf visibility and read/write permissions to only the root user:
 	- **sudo chown root:(sudoers group) /etc/rc.conf**
-	- **sudo chmod 600 /etc/rc.conf**
+	- **sudo chmod 640 /etc/rc.conf**
 
 ## The Kernel Securelevel
 - The FreeBSD kernel has five different levels of security
