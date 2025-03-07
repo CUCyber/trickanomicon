@@ -20,10 +20,14 @@ C:\Program Files\SplunkUniversalForwarder\etc\system\local\ inputs.conf outputs.
 C:\Program Files\SplunkUniversalForwarder\var\log\splunk\ splunkd.log
 ```
 
+```powershell
+Restart-Service SplunkForwarder
+```
+
 ## inputs.conf
 
 ```
- [default]
+[default]
 host = ${HOSTNAME}
 
 [WinEventLog] 
@@ -35,7 +39,7 @@ disabled = 0
 index = windows
 
 [WinEventLog://Application]
-dsiabled = 0
+disabled = 0
 index = windows
 
 [WinEventLog://System]
