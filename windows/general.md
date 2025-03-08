@@ -27,3 +27,11 @@ Get-ADUSer -Filter 'DoesNotRequirePreAuth -eq $true ' | Set-ADAccountControl -do
 ```powershell
 Invoke-WebRequest -Uri "https://download.sysinternals.com/files/SysinternalsSuite.zip" -OutFile "C:\Users\sysinternals.zip"
 ```
+
+## bins to remove
+- sethc.exe
+- Utilman.exe
+- osk.exe
+- Narrator.exe
+- Magnify.exe
+- DisplaySwitch.exe
