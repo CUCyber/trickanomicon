@@ -1,35 +1,23 @@
-# Windows notes
+# Windows Notes
+By: Aaron Sprouse and Dylan Harvey
 
-## set TLS settings for downloading (add this to splunk)
-
+## Set TLS Settings for Downloading (any download + splunk)
 ```powershell
 [Net.ServicePointManager]::SecurityProtocol = "tls12, tls11, tls"
 ```
 
-## gpupdate on all domain machines
-
-```powershell
-Get-ADComputer -Filter * | ForEach-Object {
-     Invoke-Command -ComputerName $_.Name -ScriptBlock {
-         gpupdate /force 
-    } 
-}
-```
-
-## require kerb preauth on all accounts
-
+## Require Kerberos Preauth on all Accounts
 ```powershell
 Get-ADUSer -Filter 'DoesNotRequirePreAuth -eq $true ' | Set-ADAccountControl -doesnotrequirepreauth $false
 ```
 
-## download sysinternals
-
+## Download Sysinternals
 ```powershell
-Invoke-WebRequest -Uri "https://download.sysinternals.com/files/SysinternalsSuite.zip" -OutFile "C:\Users\sysinternals.zip"
+Invoke-WebRequest -Uri "https://download.sysinternals.com/files/SysinternalsSuite.zip" -OutFile "C:\sysinternals.zip"
+Expand-Archive -Path "C:\sysinternals.zip" -DestinationPath "C:\sysinternals\"
 ```
 
-## remove WMI event subscribers
-
+## Remove WMI event subscribers
 ```powershell
 Get-WmiObject -Namespace root/subscription -Class CommandLineEventConsumer
 
@@ -40,10 +28,10 @@ Get-WmiObject -Namespace root/subscription -Class __FilterToConsumerBinding
 Get-WmiObject -Class __IntervalTimerInstruction
 ```
 
-## bins to remove
-- sethc.exe
-- Utilman.exe
-- osk.exe
-- Narrator.exe
-- Magnify.exe
-- DisplaySwitch.exe
+## Bins to Remove
+- `C:\Windows\System32\sethc.exe`
+- `C:\Windows\System32\Utilman.exe`
+- `C:\Windows\System32\osk.exe` - May require TrustedInstaller
+- `C:\Windows\System32\Narrator.exe`
+- `C:\Windows\System32\Magnify.exe`
+- `C:\Windows\System32\DisplaySwitch.exe`
