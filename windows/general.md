@@ -17,7 +17,7 @@ Invoke-WebRequest -Uri "https://download.sysinternals.com/files/SysinternalsSuit
 Expand-Archive -Path "C:\sysinternals.zip" -DestinationPath "C:\sysinternals\"
 ```
 
-## Remove WMI event subscribers
+## Remove WMI Event Subscribers
 ```powershell
 Get-WmiObject -Namespace root/subscription -Class CommandLineEventConsumer
 
@@ -26,6 +26,8 @@ Get-WmiObject -Namespace root/subscription -Class __EventFilter
 Get-WmiObject -Namespace root/subscription -Class __FilterToConsumerBinding
 
 Get-WmiObject -Class __IntervalTimerInstruction
+
+<command> | Remove-WmiObject
 ```
 
 ## Bins to Remove
