@@ -27,3 +27,15 @@ Get-ADUSer -Filter 'DoesNotRequirePreAuth -eq $true ' | Set-ADAccountControl -do
 ```powershell
 Invoke-WebRequest -Uri "https://download.sysinternals.com/files/SysinternalsSuite.zip" -OutFile "C:\Users\sysinternals.zip"
 ```
+
+## remove WMI event subscribers
+
+```powershell
+Get-WmiObject -Namespace root/subscription -Class CommandLineEventConsumer
+
+Get-WmiObject -Namespace root/subscription -Class __EventFilter
+
+Get-WmiObject -Namespace root/subscription -Class __FilterToConsumerBinding
+
+Get-WmiObject -Class __IntervalTimerInstruction
+```
