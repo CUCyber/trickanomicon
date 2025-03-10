@@ -39,3 +39,11 @@ Get-WmiObject -Namespace root/subscription -Class __FilterToConsumerBinding
 
 Get-WmiObject -Class __IntervalTimerInstruction
 ```
+
+## bins to remove
+- sethc.exe
+- Utilman.exe
+- osk.exe
+- Narrator.exe
+- Magnify.exe
+- DisplaySwitch.exe
