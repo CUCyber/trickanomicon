@@ -4,6 +4,11 @@ jobs:
   convert_via_pandoc:
     runs-on: ubuntu-22.04
     steps:
+      - uses: actions/checkout@v4
+      - name: create file list
+        id: files_list
+        run: | 
+          echo "$(find ./ -type f -name '*.md')" > $GITHUB_OUTPUT
       - uses: docker://pandoc/core:2.9
         with:
-          args: "-s --metadata title='Trickanomicon' --self-contained --toc -c style.css --highlight-style rose-pine.theme $(find ./ -type f -name '*.md' | sort) -o trickanomicon-lite.html"
+          args: "-s --metadata title='Trickanomicon' --self-contained --toc -c style.css --highlight-style rose-pine.theme ${{ steps.files_list.outputs.files }} -o trickanomicon-lite.html"
