@@ -6,4 +6,4 @@ jobs:
     steps:
       - uses: docker://pandoc/core:2.9
         with:
-          args: "-s --metadata title='Trickanomicon' --toc -c style.css --highlight-style rose-pine.theme $(find ./ -type f -name '*.md' | sort) -o trickanomicon-lite.html"
+          args: "-s --metadata title='Trickanomicon' --self-contained --toc -c style.css --highlight-style rose-pine.theme $(find ./ -type f -name '*.md' | sort) -o trickanomicon-lite.html"
