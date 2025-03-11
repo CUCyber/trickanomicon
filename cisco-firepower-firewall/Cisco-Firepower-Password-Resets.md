@@ -1,7 +1,7 @@
-# Resetting Passwords on the Cisco Firepower Firewall
+# Cisco Firepower Firewall
 
-## Note: The web interface and command line interface may be split on two different machines.
-## Make sure that passwords are reset on both the web and command line interface.
+**Note: The web interface and command line interface may be split on two different machines.**
+**Make sure that passwords are reset on both the web and command line interface.**
 
 ## Reset Passwords on the Web Interface
 1. Log in to the web interface as a user with administrator access.

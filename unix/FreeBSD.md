@@ -13,13 +13,14 @@
 	- /usr/local/etc/rc.d/
 	- Scripts are ran at the kernel level (higher privileges than the root user)
 	- Each script is a POSIX-compliant /bin/sh script with no file extension
+
 ```
 #!/bin/sh
 
 my_example_service code
 
-...
 ```
+
 - Use the service command to view services and their status
 	- List all enable services
 		- **service -e**

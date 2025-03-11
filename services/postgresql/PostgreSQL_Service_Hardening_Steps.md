@@ -1,4 +1,4 @@
-# PostgreSQL Service Hardening Steps
+# PostgreSQL Hardening
 1. Log in to the PostgreSQL console with **sudo psql**
 2. Root’s password may be blank if it is not provided during the competition
 3. If you can not log in, ensure the PostgreSQL service has properly started without logging errors (broken config file, networking error, etc.)

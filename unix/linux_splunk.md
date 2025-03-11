@@ -1,4 +1,4 @@
-# Setting up a splunk forwarder on Linux (using repo script)
+# Linux Splunk Changes
 
 ## Pre-Execution Script Changes
 

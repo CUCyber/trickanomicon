@@ -1,4 +1,4 @@
-# MariaDB and MySQL Service Hardening Steps
+# MariaDB and MySQL Hardening
 1. Log in to the mysql/mariadb console with sudo mysql -u root -p
 2. Root’s password may be blank if it is not provided during the competition
 3. If you can not log in, ensure the mysql service has properly started without logging errors (broken config file, networking error, etc.)

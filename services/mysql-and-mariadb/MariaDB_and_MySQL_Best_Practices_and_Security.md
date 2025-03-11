@@ -1,4 +1,4 @@
-# MariaDB and MySQL Best Practices and Security
+# MariaDB and MySQL
 
 ## MySQL Config File
 When installed, the mysql service will automatically start and run upon system startup on port 3306. The config file is stored in /etc/mysql/mysql.conf.d/mysqld.cnf.
@@ -6,7 +6,7 @@ When installed, the mysql service will automatically start and run upon system s
 ## MariaDB Config File
 When installed, the mysql service will automatically start and run upon system startup on port 3306. The config files are stored in /etc/mysql/my.cnf and /etc/mysql/mariadb.conf.d/50-server.cnf (this file contains Maria-DB server specific settings).
 
-## Securing the Services and Databases (MySQL and MariaDB)
+## Securing the Services and Databases
 ### The config file:
 - Ensure that these fields are set properly
 	- User (should be mysql)
