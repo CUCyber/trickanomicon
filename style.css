@@ -1,0 +1,89 @@
+:root {
+	--base: #191724;
+	--surface: #1f1d2e;
+	--overlay: #26233a;
+	--muted: #6e6a86;
+	--subtle: #908caa;
+	--text: #e0def4;
+	--love: #eb6f92;
+	--gold: #f6c177;
+	--rose: #ebbcba;
+	--pine: #31748f;
+	--foam: #9ccfd8;
+	--iris: #c4a7e7;
+	--highlight-low: #21202e;
+	--highlight-med: #403d52;
+	--highlight-high: #524f67;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	background: var(--surface);
+	color: var(--text);
+	max-width: 800px;
+	margin: auto;
+	scrollbar-color: var(--highlight-high) var(--overlay);
+	font-size: 18px;
+}
+
+a:link {
+	color: var(--pine);
+}
+
+a:visited {
+	color: #21646f;
+}
+
+a:hover {
+	color: #5194af;
+}
+
+a,hi {
+	text-decoration: none;
+}
+
+li {
+	margin-bottom: 0.5em;
+}
+
+li li {
+	margin-bottom: 0em;
+}
+
+header {
+	text-align: center;
+}
+
+header h1 {
+	color: var(--iris);
+	margin-bottom: 0em;
+}
+
+header p {
+	color: var(--muted);
+}
+
+h1 {
+	text-align: center;
+	color: var(--foam);
+}
+
+h2 {
+	color: var(--rose);
+}
+
+h3 {
+	color: var(--rose);
+}
+
+ol li::marker {
+    color: var(--iris);
+}
+
+p {
+	margin: 0em;
+}
+
+li code {
+	color: var(--iris);
+}
