@@ -8,7 +8,7 @@ jobs:
       - name: create file list
         id: files_list
         run: | 
-          echo "$(find ./ -type f -name '*.md')" > $GITHUB_OUTPUT
+          echo "files=$(find ./ -type f -name '*.md')" > $GITHUB_OUTPUT
       - uses: docker://pandoc/core:2.9
         with:
           args: "-s --metadata title='Trickanomicon' --self-contained --toc -c style.css --highlight-style rose-pine.theme ${{ steps.files_list.outputs.files }} -o trickanomicon-lite.html"
