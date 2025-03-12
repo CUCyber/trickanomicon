@@ -182,6 +182,11 @@ Linux CCDC Basic Checklist
 
         ls -la /etc/cron.*
 
+*   Find crontabs of all users
+
+		for user in $(cut -f1 -d: /etc/passwd); do echo "user: $user"; crontab -u "$user" -l 2>/dev/null && echo ""; done
+
+
 
 
 6\. Security Hardening & Permissions
@@ -241,6 +246,10 @@ Linux CCDC Basic Checklist
 *   Kill by PID:
 
         kill -9 <PID>
+
+*   Kill by process name:
+
+        pkill <process name>
 
 
 
