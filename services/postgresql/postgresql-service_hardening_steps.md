@@ -4,6 +4,7 @@
 3. If you can not log in, ensure the PostgreSQL service has properly started without logging errors (broken config file, networking error, etc.)
 4. Change root user's password
 	- In PostgreSQL, run **ALTER USER root WITH PASSWORD '(new password)';**
+	- Alternatively, use **\password**
 5. Verify/edit the config files in /etc/postgresql/(version number)/main
 	- pg_hba.conf
 		- Client Authentication Config File
