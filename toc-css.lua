@@ -95,7 +95,7 @@ nav ul li ul  {
 .navshown {
   width: 50%;
   transition: 0.5s;
-  background-color: var(--base)f2;
+  background-color: var(--base);
 }
 .subShow > ul {
   visibility: visible;
