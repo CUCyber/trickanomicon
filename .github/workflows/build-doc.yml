@@ -12,3 +12,7 @@ jobs:
       - uses: docker://pandoc/core:2.9
         with:
           args: "-s --metadata title='Trickanomicon' --self-contained --toc -c style.css --highlight-style rose-pine.theme ${{ steps.files_list.outputs.files }} -o trickanomicon-lite.html"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: trickanomicon-lite.html
+          path: trickanomicon-lite.html
