@@ -11,7 +11,7 @@ jobs:
           echo "files=$(find ./ -type f -name '*.md' -printf '"%p" ')" > $GITHUB_OUTPUT
       - uses: docker://pandoc/core:2.9
         with:
-          args: "--metadata title=Trickanomicon --embed-resources --standalone --toc -c style.css --highlight-style rose-pine.theme ${{ steps.files_list.outputs.files }} --lua-filter toc-css.lua -o trickanomicon-lite.html"
+          args: "--metadata title=Trickanomicon --standalone --self-contained --toc -c style.css --highlight-style rose-pine.theme ${{ steps.files_list.outputs.files }} --lua-filter toc-css.lua -o trickanomicon-lite.html"
       - uses: actions/upload-artifact@v4
         with:
           name: trickanomicon-lite.html

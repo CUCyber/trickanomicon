@@ -1,7 +1,7 @@
 FILES := ${shell find ./ -type f -name "*.md" | sort}
 
 build:
-	pandoc --standalone --embed-resources \
+	pandoc --standalone --self-contained \
 		--metadata title="Trickanomicon" \
 		--toc \
 		-c style.css \
