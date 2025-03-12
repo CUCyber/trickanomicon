@@ -1,5 +1,3 @@
-  Welcome file
-
 Linux CCDC Basic Checklist
 ==========================
 
