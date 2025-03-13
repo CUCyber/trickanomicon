@@ -13,7 +13,7 @@ Manually add source(s) to monitor:
 
 1. Select a file (or entire directory) to monitor
 1. Talk to a captain to obtain the index to use (most likely either "linux" or "windows")
-1. Change directory into the **$SPLUNK_HOME/bin** directory (most likely **$SPLUNK_HOME** is `/opt/splunkforwarder`)
+1. Change directory into the **`$SPLUNK_HOME/bin`** directory (most likely **`$SPLUNK_HOME`** is `/opt/splunkforwarder`)
 1. Run a command like `sudo ./splunk add monitor /path/to/thing/to/monitor -index <name of index>`
 
 In the case where the chosen source is already being monitored (and you need to change something about how it is being monitored... e.g., changing the index):
