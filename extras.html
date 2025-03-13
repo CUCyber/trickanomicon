@@ -1,0 +1,132 @@
+<style data-external="1">
+	/* fonts */
+	@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap');
+
+	body {
+		font-family: "Atkinson Hyperlegible Next", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	}
+
+	pre, code {
+		font-family: "Atkinson Hyperlegible Mono", "Courier New", Courier, monospace;
+		font-weight: 450;
+		font-size: 0.95em;
+	}
+
+	/* toc styles based on Michael Cysouw's toc-css filter */
+	body {
+		padding-left: 15em;
+		padding-right: 1em;
+	}
+
+	nav#TOC {
+		width: 16em;
+		margin-left: -17em;
+		padding-right: 1em;
+		font-size: smaller;
+		float: left;
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		white-space: nowrap;
+		overflow-y: scroll;
+	}
+
+	nav#TOC li {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	nav#TOC ul {
+		padding-left: 1.5em;
+	}
+
+	nav#TOC.collapsed ul li ul {
+		display: none;
+	}
+
+	nav#TOC ul.open {
+		display: block !important;
+	}
+
+	nav#TOC button {
+		background: #0000;
+		color: var(--text);
+		border: none;
+		font-weight: 800;
+		cursor: pointer;
+		padding-right: 1em;
+	}
+
+	.padding {
+		padding-left: 1.7em;
+	}
+
+	/* clipboard copy block */
+
+	div.sourceCode,
+	pre:not(.sourceCode) {
+		padding: 1em;
+		border: 1px solid var(--muted);
+		border-radius: 0.5em;
+		position: relative;
+	}
+
+	div.sourceCode:hover>.clipboard,
+	pre:not(.sourceCode):hover>.clipboard {
+		opacity: 1;
+	}
+
+	pre>code {
+		white-space: pre-wrap !important;
+	}
+
+	.clipboard {
+		position: absolute;
+		right: 0.5em;
+		top: 0.5em;
+		padding: 0.25em;
+		background-color: #fff2;
+		cursor: pointer;
+		font-size: 1em;
+		border: none;
+		border-radius: 0.5em;
+		opacity: 0;
+		transition: 0.1s;
+	}
+</style>
+
+<script>
+	document.addEventListener("DOMContentLoaded", (event) => {
+		document.querySelector("nav#TOC").classList.add("collapsed");
+
+		document.querySelectorAll("nav#TOC li:has(> a:not(:only-child))").forEach((e) => {
+			const button = document.createElement("button");
+			button.innerText = "→";
+			button.addEventListener("click", () => {
+				let open = e.querySelector("ul").classList.contains("open");
+				button.innerText = open ? "→" : "↓";
+				e.querySelector("ul").classList.toggle("open");
+			});
+
+			e.insertAdjacentElement("afterbegin", button);
+		});
+
+		document.querySelectorAll("nav#TOC li:has(> a:only-child)").forEach((e) => e.classList.add("padding"));
+
+		document.querySelectorAll("div.sourceCode, pre:not(.sourceCode)").forEach((e) => {
+			const button = document.createElement("button");
+			button.innerText = "📋";
+			button.className = "clipboard";
+			button.addEventListener("click", () => {
+				navigator.clipboard.writeText(e.children[0].innerText);
+				button.style.backgroundColor = "var(--gold)";
+				setTimeout(() => {
+					button.style = "";
+				}, 250);
+			});
+
+			e.appendChild(button);
+		});
+	});
+</script>
