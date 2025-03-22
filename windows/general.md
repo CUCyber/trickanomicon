@@ -13,7 +13,7 @@ Get-ADUSer -Filter 'DoesNotRequirePreAuth -eq $true ' | Set-ADAccountControl -do
 
 ## Download Sysinternals
 ```powershell
-Invoke-WebRequest -Uri "https://download.sysinternals.com/files/SysinternalsSuite.zip" -OutFile "C:\sysinternals.zip"
+Invoke-WebRequest -Uri "https://download.sysinternals.com/files/SysinternalsSuite.zip" -OutFile "C:\sysinternals.zip";
 Expand-Archive -Path "C:\sysinternals.zip" -DestinationPath "C:\sysinternals\"
 ```
 

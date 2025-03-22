@@ -1,4 +1,6 @@
 # Salt
+<https://docs.saltproject.io/en/latest/topics/tutorials/walkthrough.html>
+
 ## Commands (Execution Modules)
 ### Basics
 ```sh
@@ -31,6 +33,10 @@ sudo salt '*linux*' cp.get_dir salt://files /tmp/files
 sudo salt '*win*' cp.get_dir salt://files C:/ # no \
 
 sudo salt-cp '*linux*' src dest # slower
+
+# push files from minion; /var/cache/salt/master/minions/minion-id/files
+sudo salt '*linux*' cp.push_dir /var/www/html/index.html
+sudo salt '*linux*' cp.push_dir /var/www/html
 ```
 
 ### User Administration
