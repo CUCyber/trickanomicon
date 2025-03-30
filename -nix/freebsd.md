@@ -66,10 +66,10 @@ my_example_service code
 		- Remove the flag: **sudo chflags noschg (filepath)**
 	- Set the system append-only flag
 		- **sudo chflags sappnd (filepath)**
-		- Remove the flag: **sudo chflags noappnd (filepath)**
+		- Remove the flag: **sudo chflags nosappnd (filepath)**
 	- Set the system undeletable flag
 		- **sudo chflags sunlnk (filepath)**
-		- Remove the flag: **sudo chflags nounlnk (filepath)**
+		- Remove the flag: **sudo chflags nosunlnk (filepath)**
 - To view which flags are set on a file, run **ls -lo (filepath)**
 
 ## System Configuration Files
